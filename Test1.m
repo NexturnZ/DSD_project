@@ -1,4 +1,4 @@
-Image = imread('Screenshot4.png');
+Image = imread('Screenshot3.png');
 I = sum(Image(605:1481,:,:),3)/3;   % extract important region
 
 %% edge detection
@@ -11,7 +11,20 @@ O(O<10) = 0;
 draw(O);
 
 %% circle finding 
-
+r = 30;
 s = size(O);
+for i1 = 1:s(1)
+   for i2 = 1:s(2)
+       
+   end
+end
+
+creigon = O(1:end/2,:);
+
+
+
+
+
+
 
 
