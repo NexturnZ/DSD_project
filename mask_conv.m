@@ -2,7 +2,9 @@ function OutputImage = mask_conv(InputImage, mask)
 mSize = length(mask);
 s = size(InputImage);
 mask_rot = rot90(mask,2);
-I_pad = zeros(s(1)+2*floor(mSize/2),s(2)+2*floor(mSize/2));
+% the padded value is the value of I(1,1), since the background share the
+% same color
+I_pad = InputImage(1,1)*ones(s(1)+2*floor(mSize/2),s(2)+2*floor(mSize/2));
 I_pad(floor(mSize/2)+1:floor(mSize/2)+s(1),...
     floor(mSize/2)+1:floor(mSize/2)+s(2)) = InputImage;      % pad zeros around I
 OutputImage = zeros(s(1), s(2));
