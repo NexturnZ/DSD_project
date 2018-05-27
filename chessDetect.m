@@ -1,10 +1,7 @@
 % I is Intensity image, r should be 30
 function pixel = chessDetect(I,r)
 s = size(I);
-pixel = [0,0];                      % initialize output result
-x = 1:s(2);
-y = 1:s(1);
-[X,Y] = meshgrid(x,y);
+
 %% edge detection in intensity image ---- for chess piece detect
 Lap = [-1,-1,-1;...
        -1, 8,-1;...
@@ -12,10 +9,10 @@ Lap = [-1,-1,-1;...
 edge = mask_conv(I,Lap);     % extract edge in intensity field
 Iplot = abs(edge);
 Iplot = Iplot/max(Iplot(:))*255;
-Iplot(edge>=20)=255;
-Iplot(edge<20) = 0;
+Iplot(edge>=30)=255;
+Iplot(edge<30) = 0;
 edge2 = Iplot;
-% draw(Iplot(2:end-1,2:end-1));title('edge of intensity image');
+draw(Iplot(2:end-1,2:end-1));title('edge of intensity image');
 
 %% circle finding 
 % r = 30;                 % radius of head of chess piece
@@ -34,6 +31,7 @@ for i1 = 1:s(1)
         end
     end
 end
+% figure;mesh(H_field);
 [~,idx] = max(H_field(:));
 head(1) = mod(idx,s(1));
 head(2) = round(idx/s(1));
