@@ -12,7 +12,7 @@ Iplot = Iplot/max(Iplot(:))*255;
 Iplot(edge>=30)=255;
 Iplot(edge<30) = 0;
 edge2 = Iplot;
-draw(Iplot(2:end-1,2:end-1));title('edge of intensity image');
+% draw(Iplot(2:end-1,2:end-1));title('edge of intensity image');
 
 %% circle finding 
 % r = 30;                 % radius of head of chess piece

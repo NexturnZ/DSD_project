@@ -1,10 +1,10 @@
 clear all; close all;
 dbstop if error;
 %% Obtain image
-Image = double(imread('Screenshot11.png'));
+Image = double(imread('Screenshot6.png'));
 s = size(Image);
 I = Image(round(s(1)/3):round(s(1)/3*2),:,:);
-figure;draw(I);title('origin');
+% figure;draw(I);title('origin');
 %% transfer RGB to HSI
 
 I_hsi = RGBtoHSI(I);

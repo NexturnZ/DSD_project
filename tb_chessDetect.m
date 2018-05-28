@@ -10,7 +10,7 @@ figure;draw(I);title('origin');
 I_hsi = RGBtoHSI(I);
 % figure;draw(I_hsi(:,:,1));title('Hue');
 % figure;draw(I_hsi(:,:,2));title('Saturate');
-figure;draw(I_hsi(:,:,3));title('Intensity');
+% figure;draw(I_hsi(:,:,3));title('Intensity');
 
 %% test chess_detect
 pixel = chessDetect(I_hsi(:,:,3),30);
